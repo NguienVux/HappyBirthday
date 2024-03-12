@@ -43,17 +43,26 @@ supportsCssVars() || alert("Please view this demo in a modern browser that suppo
 				</h2>
 			</div>
 		</main>
-						      <audio src="xuan.mp3" autoplay controls hidden>
-      </audio>
         <svg class="cursor" width="80" height="80" viewBox="0 0 80 80">
 			<circle class="cursor__inner" cx="40" cy="40" r="20"></circle>
 		</svg>
 		<script src="./script.js"></script>
 		        </div>
         <div id="ground"></div>
-<audio controls autoplay>
-  <source src="xuan.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
 	</body>
+	<body onclick="playMusic()">
+<audio id="background-music">
+  <source src="background_music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+	<script>
+    const backgroundMusic = document.getElementById('background-music');
+
+    // Hàm để phát nhạc
+    function playMusic() {
+        backgroundMusic.play();
+        // Xóa sự kiện click sau khi đã phát nhạc
+        document.body.onclick = null;
+    }
+</script>
+</audio>
 </html>
